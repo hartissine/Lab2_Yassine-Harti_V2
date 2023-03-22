@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GestionJeu : MonoBehaviour
 {
-    private int _pointage = 0;  
+    private int _pointage ;  
     private int _accrochageNiveau1 = 0;  
     private float _tempsNiveau1 = 0.0f;      
     private int _accrochageNiveau2 = 0;  
@@ -89,19 +89,22 @@ public class GestionJeu : MonoBehaviour
 
     public void SetNiveau1(int accrochages, float tempsNiv1)
     {
+        _pointage = 0;
         _accrochageNiveau1 = accrochages;
         _tempsNiveau1 = tempsNiv1;
     }
 
     public void SetNiveau2(int accrochages, float tempsNiv2)
     {
+        _pointage = 0;
         _accrochageNiveau2 = accrochages;
-        _tempsNiveau2 = tempsNiv2;
+        _tempsNiveau2 = tempsNiv2 - _tempsNiveau1;
     }
 
     public void SetNiveau3(int accrochages, float tempsNiv3)
     {
+        _pointage = 0;
         _accrochageNiveau3 = accrochages;
-        _tempsNiveau3 = tempsNiv3;
+        _tempsNiveau3 = tempsNiv3 - _tempsNiveau2 - _tempsNiveau1;
     }
 }
