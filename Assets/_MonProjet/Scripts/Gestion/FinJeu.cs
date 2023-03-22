@@ -32,7 +32,7 @@ public class FinJeu : MonoBehaviour
                 int accrochages = _gestionJeu.GetPointage();  // Récupère le pointage total dans gestion jeu
                 float tempsTotalniv1 = _gestionJeu.GetTempsNiv1() + _gestionJeu.GetAccrochagesNiv1();  //Calcul le temps total pour le niveau 1
                 float _tempsNiveau2 = Time.time - _gestionJeu.GetTempsNiv1(); // Calcul le temps pour le niveau 2
-                float _tempsNiveau3 = Time.time - _tempsNiveau2; // Calcul le temps pour le niveau 3
+                float _tempsNiveau3 = Time.time + _gestionJeu.GetTempsNiv1() - _gestionJeu.GetTempsNiv2(); // Calcul le temps pour le niveau 3
                 int _accrochagesNiveau2 = _gestionJeu.GetPointage() - _gestionJeu.GetAccrochagesNiv1(); // Calcul le nombre d'accrochages pour le niveau 2
                 int _accrochagesNiveau3 = _gestionJeu.GetPointage() - _accrochagesNiveau2; // Calcul le nombre d'accrochages pour le niveau 3
                 float tempsTotalniv2 = _tempsNiveau2 + _accrochagesNiveau2; // Calcul le temps total pour le niveau 2
@@ -49,21 +49,22 @@ public class FinJeu : MonoBehaviour
                 Debug.Log("Le temps pour le niveau 3 est de : " + _tempsNiveau3.ToString("f2") + " secondes");
                 Debug.Log("Vous avez accroché au niveau 3 : " + _accrochagesNiveau3 + " obstacles");
                 Debug.Log("Temps total niveau 3 : " + tempsTotalniv3.ToString("f2") + " secondes");
-                Debug.Log("Le temps total pour les deux niveau est de : " + (tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3).ToString("f2") + " secondes");
+                Debug.Log("Le temps total pour les trois niveaux est de : " + (tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3).ToString("f2") + " secondes");
 
                 _player.finPartieJoueur();  // Appeler la méthode publique dans Player pour désactiver le joueur
             }
-            else
-            {
+            else {
+                if(noScene == 0)
                 // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 1
                 _gestionJeu.SetNiveau1(_gestionJeu.GetPointage(), Time.time);
-                // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 1
-                _gestionJeu.SetNiveau2(_gestionJeu.GetPointage(), Time.time);
-                // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 1
-                _gestionJeu.SetNiveau3(_gestionJeu.GetPointage(), Time.time);
+           else if (noScene == 1)
+                    // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 2
+                    _gestionJeu.SetNiveau2(_gestionJeu.GetPointage(), Time.time);
+                else if (noScene == 2)
+                    _gestionJeu.SetNiveau3(_gestionJeu.GetPointage(), Time.time); 
                 // Charge la scène suivante
-                SceneManager.LoadScene(noScene + 1);
-            }
+                SceneManager.LoadScene(noScene + 1);}
+            
         }
     }
 }
