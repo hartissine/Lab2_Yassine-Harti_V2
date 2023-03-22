@@ -7105,11 +7105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6690982814329452399, guid: 9b2dae3707667524e8ae7fb78662ad63, type: 3}
       propertyPath: _vitesse
-      value: 750
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 6690982814329452399, guid: 9b2dae3707667524e8ae7fb78662ad63, type: 3}
       propertyPath: _rotation
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8508387145801877859, guid: 9b2dae3707667524e8ae7fb78662ad63, type: 3}
       propertyPath: m_Size.x
