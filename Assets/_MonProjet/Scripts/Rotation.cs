@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    [SerializeField] private float _vitesseRotation = 1.5f;
+    // ***** Attributs *****
+
+    [SerializeField] private float _vitesseRotation = 1.5f;  // Établi la vitesse de rotation du gameObject 
 
     void FixedUpdate()
     {
