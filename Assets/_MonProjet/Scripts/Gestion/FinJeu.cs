@@ -46,7 +46,7 @@ public class FinJeu : MonoBehaviour
                 Debug.Log("Vous avez accroché au niveau 3 : " + _gestionJeu.GetAccrochagesNiv3() + " obstacles");
                 Debug.Log("Temps total niveau 3 : " + tempsTotalniv3.ToString("f2") + " secondes");
                 Debug.Log("Le temps total pour les trois niveaux est de : " + (tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3).ToString("f2") + " secondes");
-                Debug.Log("Le Nombres total d'obstacles touché dans les trois niveaux est de : " + (_gestionJeu.GetAccrochagesNiv1() + _gestionJeu.GetAccrochagesNiv2() + _gestionJeu.GetAccrochagesNiv3()) + " obstacles");
+                Debug.Log("Le Nombres total d'obstacles touché pour les trois niveaux est de : " + (_gestionJeu.GetAccrochagesNiv1() + _gestionJeu.GetAccrochagesNiv2() + _gestionJeu.GetAccrochagesNiv3()) + " obstacles");
 
 
                 _player.finPartieJoueur();  // Appeler la méthode publique dans Player pour désactiver le joueur
