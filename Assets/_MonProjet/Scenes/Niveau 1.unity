@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 365192127}
   - component: {fileID: 365192129}
   m_Layer: 0
-  m_Name: GolemTombe
+  m_Name: Zone 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
